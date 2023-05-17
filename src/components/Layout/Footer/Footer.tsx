@@ -1,3 +1,5 @@
+import { Button } from '@chakra-ui/react'
+
 const Footer = () => {
   return (
     <footer className="vg-footer">
@@ -8,7 +10,7 @@ const Footer = () => {
               <p>Where to find me</p>
               <hr className="divider" />
               <p className="fs-large fg-white">
-                1600 Amphitheatre Parkway Mountain View, California 94043 US
+                Jl. Alternatif Cibubur No. 30 Cileungsi, Kab. Bogor, 16820
               </p>
             </div>
           </div>
@@ -18,16 +20,16 @@ const Footer = () => {
               <hr className="divider" />
               <ul className="list-unstyled">
                 <li>
-                  <a href="#">Instagram</a>
+                  <a href="https://instagram.com/mikhail_abdillah">Instagram</a>
                 </li>
                 <li>
-                  <a href="#">Facebook</a>
+                  <a href="https://facebook.com/mikhailabdillahtr">Facebook</a>
                 </li>
                 <li>
-                  <a href="#">Twitter</a>
+                  <a href="https://github.com/mikhailabdillah">Github</a>
                 </li>
                 <li>
-                  <a href="#">Youtube</a>
+                  <a href="https://dribbble.com/mikhailabdillah">Dribbble</a>
                 </li>
               </ul>
             </div>
@@ -55,11 +57,7 @@ const Footer = () => {
                   className="form-control"
                   placeholder="Email address"
                 />
-                <input
-                  type="submit"
-                  className="btn btn-theme no-shadow"
-                  value="Subscribe"
-                />
+                <Button type="submit">Subscribe</Button>
               </div>
             </form>
           </div>

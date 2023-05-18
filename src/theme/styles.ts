@@ -7,6 +7,11 @@ const styles: Styles = {
       body: {
         bg: 'white',
       },
+      a: {
+        _hover: {
+          color: 'primary',
+        },
+      },
     },
   }),
 }

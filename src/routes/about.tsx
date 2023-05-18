@@ -229,7 +229,7 @@ const AboutPage = () => {
               },
             }}
           >
-            <GridItem gridColumn={['1/1', 'span 6/span 6', 'span 4/span 4']}>
+            <GridItem gridColumn={['1/-1', 'span 6/span 6', 'span 4/span 4']}>
               <Link
                 href="https://myfreedoctor.vercel.app"
                 target="_blank"
@@ -247,7 +247,7 @@ const AboutPage = () => {
                 </figure>
               </Link>
             </GridItem>
-            <GridItem gridColumn={['1/1', 'span 6/span 6', 'span 4/span 4']}>
+            <GridItem gridColumn={['1/-1', 'span 6/span 6', 'span 4/span 4']}>
               <Link
                 href="https://www.exavault.com"
                 target="_blank"
@@ -265,7 +265,7 @@ const AboutPage = () => {
                 </figure>
               </Link>
             </GridItem>
-            <GridItem gridColumn={['1/1', 'span 6/span 6', 'span 4/span 4']}>
+            <GridItem gridColumn={['1/-1', 'span 6/span 6', 'span 4/span 4']}>
               <Link
                 href="https://jenzabar.com"
                 target="_blank"

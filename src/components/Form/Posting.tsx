@@ -9,6 +9,7 @@ import {
   Textarea,
 } from '@chakra-ui/react'
 import { Form, Formik } from 'formik'
+import { nanoid } from 'nanoid'
 
 const PostingForm = () => {
   const dispatch = useAppDispatch()
@@ -22,20 +23,25 @@ const PostingForm = () => {
   return (
     <Formik
       initialValues={initialValues}
-      onSubmit={(values) => {
-        if (values.title) {
+      onSubmit={(values, { resetForm, setSubmitting }) => {
+        try {
           const post = {
             ...values,
-            id: 'asd',
+            id: nanoid(),
           }
           dispatch({ type: 'posting/addPost', payload: post })
+        } catch (err) {
+          throw new Error('Something went wrong please try again!')
+        } finally {
+          resetForm()
+          setSubmitting(false)
         }
       }}
     >
-      {({ values, handleChange, handleSubmit, setFieldValue }) => (
+      {({ values, handleChange, setFieldValue }) => (
         <Form>
           <Container py={10}>
-            <FormControl mb={6}>
+            <FormControl isRequired mb={6}>
               <Input
                 type="text"
                 value={values.title}
@@ -43,7 +49,7 @@ const PostingForm = () => {
                 placeholder="Post Title"
               />
             </FormControl>
-            <FormControl mb={6}>
+            <FormControl isRequired mb={6}>
               <Textarea
                 rows={8}
                 value={values.content}
@@ -67,9 +73,7 @@ const PostingForm = () => {
                 or save to draft
               </FormLabel>
             </FormControl>
-            <Button type="submit" onClick={() => handleSubmit()}>
-              Submit
-            </Button>
+            <Button type="submit">Submit</Button>
           </Container>
         </Form>
       )}

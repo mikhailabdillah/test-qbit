@@ -4,6 +4,7 @@ import Button from './Button'
 import Container from './Container'
 import Input from './Input'
 import FormError from './FormError'
+import Textarea from './Textarea'
 
 const components = {
   Text,
@@ -12,6 +13,7 @@ const components = {
   Container,
   Input,
   FormError,
+  Textarea,
 }
 
 export default components

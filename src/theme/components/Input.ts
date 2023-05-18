@@ -14,7 +14,7 @@ const Input: ThemeComponents['Input'] = {
           borderColor: 'red.400',
         },
         _placeholder: {
-          color: 'gray.300',
+          color: 'gray.500',
           opacity: 0.7,
         },
       },

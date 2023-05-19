@@ -15,6 +15,8 @@ import {
 } from '@chakra-ui/react'
 
 const AboutPage = () => {
+  const diff = new Date().getTime() - new Date('1997-11-02').getTime()
+  const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25))
   return (
     <Layout>
       <Container maxW={'7xl'} py={20}>
@@ -23,6 +25,15 @@ const AboutPage = () => {
         </Heading>
         <Box as="section">
           <Heading as="h2">Profile</Heading>
+          <Text>
+            <b>Name: </b> Mikhail Abdillah
+          </Text>
+          <Text>
+            <b>Position: </b> Software Engineer (Front End)
+          </Text>
+          <Text>
+            <b>Age: </b> {age}
+          </Text>
           <Text>
             Experienced Web Developer is adept in all stages of advanced web
             development. Knowledgeable in a user interface/design process,
@@ -38,8 +49,8 @@ const AboutPage = () => {
           </Text>
         </Box>
         <Box as="section" mt={8}>
-          <Flex mx={-4}>
-            <Box w={'50%'} p={4}>
+          <Flex flexWrap={'wrap'} mx={-4}>
+            <Box w={['100%', null, '50%']} p={4}>
               <Heading as={'h2'}>Work Experience</Heading>
               <List mt={4} className="timeline">
                 <ListItem>
@@ -82,7 +93,7 @@ const AboutPage = () => {
                 </ListItem>
               </List>
             </Box>
-            <Box w={'50%'} p={4}>
+            <Box w={['100%', null, '50%']} p={4}>
               <Heading as={'h2'}>Education/Certification</Heading>
               <List mt={4} className="timeline">
                 <ListItem>
@@ -117,84 +128,96 @@ const AboutPage = () => {
         </Box>
 
         <Box as="section" mt={8}>
-          <Heading as={'h2'}>Skills</Heading>
-          <List display={'inline-flex'} sx={{ '& li': { mr: 2 } }}>
-            <ListItem>
-              <Box className="badge badge-sk">HTML5</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">CSS3</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">Less, SCSS</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">JavaScript</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">Typescript</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">Redux</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">jQuery</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">Reactjs</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">Nextjs</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">PHP</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">Nodejs</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">Git</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">CI/CD</Box>
-            </ListItem>
-            <ListItem>
-              <Box className="badge badge-sk">ORM (Prisma)</Box>
-            </ListItem>
-          </List>
-        </Box>
-        <Box as="section" mt={8} sx={{ '& li': { display: 'block' } }}>
-          <Heading as={'h2'} mb={4}>
-            Languages
-          </Heading>
-          <Heading as="h3" size="md">
-            English
-          </Heading>
-          <Wrap spacing={8} mb={4}>
-            <WrapItem>
-              <b>Written:</b> Fluent
-            </WrapItem>
-            <WrapItem>
-              <b>Spoken:</b> Fair
-            </WrapItem>
-            <WrapItem>
-              <b>Read:</b> Fair
-            </WrapItem>
-          </Wrap>
-          <Heading as="h3" size="md">
-            Bahasa
-          </Heading>
-          <Wrap spacing={8}>
-            <WrapItem>
-              <b>Written:</b> Fluent
-            </WrapItem>
-            <WrapItem>
-              <b>Spoken:</b> Fluent
-            </WrapItem>
-            <WrapItem>
-              <b>Read:</b> Fluent
-            </WrapItem>
-          </Wrap>
+          <Flex flexWrap={'wrap'} mx={-4}>
+            <Box w={['100%', null, '50%']} p={4}>
+              <Heading as={'h2'}>Skills</Heading>
+              <List
+                display={'inline-flex'}
+                flexWrap={'wrap'}
+                sx={{ '& li': { mr: 2 } }}
+              >
+                <ListItem>
+                  <Box className="badge badge-sk">HTML5</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">CSS3</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">Less, SCSS</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">JavaScript</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">Typescript</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">Redux</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">jQuery</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">Reactjs</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">Nextjs</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">PHP</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">Nodejs</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">Git</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">CI/CD</Box>
+                </ListItem>
+                <ListItem>
+                  <Box className="badge badge-sk">ORM (Prisma)</Box>
+                </ListItem>
+              </List>
+            </Box>
+            <Box
+              w={['100%', null, '50%']}
+              p={4}
+              sx={{ '& li': { display: 'block' } }}
+            >
+              <Heading as={'h2'} mb={4}>
+                Languages
+              </Heading>
+              <Heading as="h3" size="md">
+                English
+              </Heading>
+              <Wrap spacing={8} mb={4}>
+                <WrapItem>
+                  <b>Written:</b> Fluent
+                </WrapItem>
+                <WrapItem>
+                  <b>Spoken:</b> Fair
+                </WrapItem>
+                <WrapItem>
+                  <b>Read:</b> Fair
+                </WrapItem>
+              </Wrap>
+              <Heading as="h3" size="md">
+                Bahasa
+              </Heading>
+              <Wrap spacing={8}>
+                <WrapItem>
+                  <b>Written:</b> Fluent
+                </WrapItem>
+                <WrapItem>
+                  <b>Spoken:</b> Fluent
+                </WrapItem>
+                <WrapItem>
+                  <b>Read:</b> Fluent
+                </WrapItem>
+              </Wrap>
+            </Box>
+          </Flex>
         </Box>
         <Box as="section" mt={8}>
           <Heading as={'h2'}>Portfolio</Heading>

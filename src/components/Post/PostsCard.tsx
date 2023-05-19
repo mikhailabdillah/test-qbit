@@ -4,7 +4,7 @@ import { Box, Container, Grid, GridItem, Heading, Text } from '@chakra-ui/react'
 import { useSelector } from 'react-redux'
 
 const selectPublishPosts = (state: RootState) =>
-  state.posting.post.filter((post) => post.status === 1)
+  state.posting.filter((post) => post.status === 1)
 
 const Card = ({ post }: { post: PostingState }) => {
   return (

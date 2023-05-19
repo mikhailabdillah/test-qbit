@@ -7,26 +7,23 @@ export type PostingState = {
   content: string
 }
 
-const initialState: { post: PostingState[] } = {
-  post: [],
-}
+const initialState: PostingState[] = []
 const name = 'posting'
 const slice = createSlice({
   name,
   initialState,
   reducers: {
     addPost: (state, action) => {
-      state.post.push(action.payload)
+      state.push(action.payload)
     },
+    // @ts-ignore
     updateStatus: (state, action) => {
-      state.post.map((post) => {
-        if (post.id !== action.payload) {
-          return post
-        }
-
-        return {
-          ...post,
-          status: !post.status,
+      return state.flatMap((post) => {
+        if (post.id === action.payload) {
+          return {
+            ...post,
+            status: post.status ? 0 : 1,
+          }
         }
       })
     },
